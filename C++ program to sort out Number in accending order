@@ -1,0 +1,29 @@
+#include <iostream>
+#include <conio.h>
+#include <iomanip>
+using namespace std;
+int main()
+{
+    int i,t,k;
+	int arr[10]; 
+	for (i = 0; i < 10; i++) 
+	{
+		cout << "enter number " << i + 1 << "   :";
+		cin >> arr[i]; 
+	}
+	for (i = 0; i<10; i++) 
+	{
+		for (k =i + 1; k<10; k++)
+		
+			if (arr[i]>arr[k]) 
+			{
+				t = arr[i];
+				arr[i] = arr[k];
+				arr[k] = t;
+			}
+	};
+	for (i = 0; i<10; i++)  
+		cout << arr[i] << "     "; 
+	_getch();
+	return 0;
+}

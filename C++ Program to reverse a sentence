@@ -1,0 +1,31 @@
+#include<iostream>
+#include<conio.h>
+#include<string>
+using namespace std;
+void main()
+{
+int y=0,len,j=0;
+	char one[80],rev[80];  
+	cin.get(one, 80);   
+	len = strlen(one); 
+	cout << "You enter " << one << endl;
+	while (one[y] != '\0') 
+		y++; 
+	while (y>0) 
+	{
+		rev[j] = one[--y];
+		++j;
+	}
+	rev[j] = '\0'; 
+	for (y = 0; rev[y] != '\0'; y++){
+
+		if (rev[y + 1] == ' ' || rev[y + 1] == NULL){
+
+			for (j = y; j >= 0 && rev[j] != ' '; j--)
+				cout << rev[j];
+
+			cout << " ";
+		}
+	}
+_getch();
+}

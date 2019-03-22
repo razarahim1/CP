@@ -1,0 +1,37 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+int main()
+{
+	float temprature,c,f;  
+	char select, option;  
+	start
+	cout << "Press 'c' for converting fahreneit to celcius" << endl;
+	cout << "Press 'f' for converting celcius to fahreneit" << endl;
+	cout << "enter your choice" << endl; 
+	cin >> select;   // for select between fahreneite or celcius type tempereature
+	if (select == 'c') 
+	{ 
+		cout << "enter temprature in farhenite"<< endl;
+		cin >> temprature; 
+		c = (temprature - 32) * 5 / 9; 
+		cout << "temprature in celcius is " << endl << c << endl; 
+	}
+	else if (select == 'f') 
+	{
+		cout << "enter temprature in celcius" << endl;
+		cin >> temprature; 
+		f = 32+(temprature *  9 / 5); 
+		cout << "temprature in farhenite is " << endl << f << endl;
+	}
+	
+	cout << "do you want to continue ??(y/n) " << endl;
+	cin >> option 
+	if (option == 'y')
+	{
+		goto start;
+	}
+	else if (option == 'n')
+	return 0;
+	_getch();
+}

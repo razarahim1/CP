@@ -1,0 +1,30 @@
+#include <iostream>
+#include <conio.h>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	int array[7], i, number;
+	int f = 0, r = 7, cen;
+	for (i = 0; i < r; i++) { 
+		cout << "enter the values = ";
+		cin>> array[i]; 
+	}
+	cout << "Enter number to Search : "; 
+	cin >> number; 
+	while (f <= r){
+		cen = (f + r) / 2;  
+		if (array[cen] == number) {
+			cout << " Search number  is  " << cen + 1 ; 
+			break; 
+		}
+		else if (array[cen] < number)
+			f = cen + 1;
+		else
+			r = cen - 1;
+	}
+	if (f > r) 
+		cout << " you entered invalid number Not Found ";
+	_getch();
+	return 0;
+}

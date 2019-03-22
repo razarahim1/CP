@@ -1,0 +1,17 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+int main()
+{
+	int a, b, c, d, add1, add2; 
+	char slash;
+	cout << "Enter first Fraction = ";
+	cin >> a >> slash >> b; 
+	cout << "Enter second Fraction = ";
+	cin >> c >> slash >> d; 
+	add2 = b*d; 
+	add1 = (a*d) - (b*c); 
+	cout << "Difference = " << add1 << "/" << add2 << endl; 
+	_getch();
+	return 0;
+}

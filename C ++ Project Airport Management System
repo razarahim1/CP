@@ -1,0 +1,1005 @@
+#include <iostream>
+#include <conio.h>
+#include <string>
+#include <cstring>
+#include <fstream>
+using namespace std;
+
+struct Date
+{
+	int day;
+	int month;
+	int year;
+}Date;
+struct Info
+{
+	char Name[20];
+	int Passport;
+	char Email[20];
+	int MobileNo;
+	
+}PassengerData ;
+void detail()
+{
+
+}
+
+void main()
+{
+	char dep[10], ari[10];
+	int result;
+	cout << "\t\t\tAIRLINE TICKET RESSERVATION SYSTEM" << endl << endl << endl << endl;
+	cout << "Service is only available for these cities" << endl << endl;
+	cout << "1:   Islamabad (Pakistan)" << endl; char isl[] = "islamabad";
+	cout << "2:   Sharja (UAE)" << endl; char dub[] = "sharja";
+	cout << "3:   London (UK)" << endl; char lon[] = "london";
+	cout << "4:   Istanbul (Turkey)" << endl; char ist[] = "istanbul";
+	cout << "5:   Tokyo (Japan)" << endl; char tok[] = "tokyo";
+	cout << "6:   Doha (Qatar)" << endl << endl; char doh[] = "doha";
+	cout << endl << "\t\t\tSEARCH FLIGHTS" << endl << endl << endl;
+
+	cout << "(Only Lower Case for city name)" << endl;
+	for (int tc = 0; tc < 100; tc++)//tc for total city loop
+	{
+		for (int dc = 0; dc < 100; dc++)//dc for departure city loop
+		{
+			cout << "->   Going from : ";
+			cin >> dep;
+			if (strcmp(dep, isl) == 0)
+			{
+				break;
+			}
+			else
+			{
+				if (strcmp(dep, dub) == 0)
+				{
+					break;
+				}
+				else
+				{
+					if (strcmp(dep, lon) == 0)
+					{
+						break;
+					}
+					else
+					{
+						if (strcmp(dep, ist) == 0)
+						{
+							break;
+						}
+						else
+						{
+							if (strcmp(dep, tok) == 0)
+							{
+								break;
+							}
+							else
+							{
+								if (strcmp(dep, doh) == 0)
+								{
+									break;
+								}
+								else
+								{
+									cout << "we don't have any service for this city. try again!" << endl << endl;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		for (int ac = 0; ac < 100; ac++)//ac for arrival city loop
+		{
+			cout << endl << "->   Going to : ";
+			cin >> ari;
+			if (strcmp(ari, isl) == 0)
+			{
+				break;
+			}
+			else
+			{
+				if (strcmp(ari, dub) == 0)
+				{
+					break;
+				}
+				else
+				{
+					if (strcmp(ari, lon) == 0)
+					{
+						break;
+					}
+					else
+					{
+						if (strcmp(ari, ist) == 0)
+						{
+							break;
+						}
+						else
+						{
+							if (strcmp(ari, tok) == 0)
+							{
+								break;
+							}
+							else
+							{
+								if (strcmp(ari, doh) == 0)
+								{
+									break;
+								}
+								else
+								{
+									cout << "we don't have any service for this city. try again!" << endl << endl;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		result = strcmp(dep, ari);
+		if (result == 0)
+		{
+			cout << "incorrect entries or same cities....try again !" << endl << endl;
+		}
+		else
+		{
+			break;
+		}
+	}
+	int d, m, y;
+	int date, tdate;
+	for (tdate = 0; tdate < 100; tdate++)
+	{
+		for (date = 0; date<100; date++)
+		{
+			cout << endl << endl;
+			cout << "-> Going date" << endl;
+			cout << "\tDay : ";
+			cin >> Date.day;
+			cout << "\tMonth : ";
+			cin >> Date.month;
+			cout << "\tYear : ";
+			cin >> Date.year;
+			if (Date.day>0 && Date.day <= 31)
+			{
+				if (Date.month > 0 && Date.month <= 12)
+				{
+					if (Date.year >= 2018 && Date.year <= 2019)//date only varies btween 2018 & 2019
+					{
+						break;
+					}
+					else
+					{
+						cout << "Invalid Year !!" << endl;
+					}
+				}
+				else
+				{
+					cout << "Invalid Month !!" << endl;
+				}
+			}
+			else
+			{
+				cout << "Invalid Date !!" << endl;
+			}
+		}
+
+		cout << endl << endl;
+
+		char f1[] = "PIA - C345a           ", f2[] = "EMIRATES - C759d      ", f3[] = "AIR BLUE - F095b      ", f4[] = "QATAR AIR WAYS - E296a", f5[] = "JAPAN AIRLINES - A125d";
+		cout << endl << endl << "\t\t\tSEARCH RESULTS" << endl << endl << endl;
+		cout << "\tFlight no.\t\t\tLeaving from\t\t\tLeaving at" << endl << endl;
+		cout << "1: " << f1 << "\t\t\t" << dep << "\t\t\t12:05pm" << endl << endl;
+		cout << "2: " << f2 << "\t\t\t" << dep << "\t\t\t01:35pm" << endl << endl;
+		cout << "3: " << f3 << "\t\t\t" << dep << "\t\t\t04:05pm" << endl << endl;
+		cout << "4: " << f4 << "\t\t\t" << dep << "\t\t\t06:35pm" << endl << endl;
+		cout << "5: " << f5 << "\t\t\t" << dep << "\t\t\t09:05pm" << endl << endl;
+		cout << "\t\t\tSELECT YOUR FLIGHT" << endl << endl << endl;
+		int sn;
+		char sf[50];
+
+		for (int wsn = 0; wsn < 100; wsn++)//wsn stands for wrong serial number loop
+		{
+			cout << "\t  enter flight serial number : ";
+			cin >> sn;
+			if (sn >= 1 && sn <= 5)
+			{
+				if (sn == 1)
+				{
+					strcpy_s(sf, f1);
+					break;
+				}
+				if (sn == 2)
+				{
+					strcpy_s(sf, f2);
+					break;
+				}
+				if (sn == 3)
+				{
+					strcpy_s(sf, f3);
+					break;
+				}
+				if (sn == 4)
+				{
+					strcpy_s(sf, f4);
+					break;
+				}
+				if (sn == 5)
+				{
+					strcpy_s(sf, f5);
+					break;
+				}
+			}
+			else
+			{
+				cout << endl << "\tincorrect serial number. try again" << endl << endl;
+			}
+		}
+		char name[100], passportnum[16], email[30], number[20], sr[20];
+		cout << "";
+		cin.getline(sr, 15);
+		cout << "Enter name : ";
+		cin>>PassengerData.Name;
+		cout << "Enter passport number : ";
+		cin>>PassengerData.Passport;
+		cout << "Enter email : ";
+		cin >> PassengerData.Email;
+		cout << "Enter Phone Number : ";
+		cin >> PassengerData.MobileNo;
+		ofstream file("airline.csv");
+		{
+			cout << "Name" << "," << "Passport" << "," << "Number" << "," << "Email";
+			file << name << "," << passportnum << "," << number << "," << email << "\n";
+		}
+		file.close();
+		cout << endl << "  Your selected flight is :: " << sf;//select flight copied from hard code array s
+		cout << endl << endl;
+		cout << "\t\t\tFLIGHT DETAILS" << endl << endl << endl;
+		cout << "\t\tflight name:\t " << sf << endl << endl;
+		cout << "\t\tleaving from:\t " << dep << endl << endl;
+		cout << "\t\tgoing to:\t " << ari << endl << endl;
+		cout << "\tsitting plan: " << endl << endl;
+		int s = 1;
+		cout << "\t";
+		for (int wl1 = 0; wl1 < 34; wl1++)//wl1=width loop 1
+		{
+			cout << "-";
+		}
+		cout << endl;
+		for (int ll1 = 1; ll1 <= 35; ll1++)
+		{
+			cout << "\t";
+			for (int c = 1; c <= 1; c++)//c for the one length element
+			{
+				cout << "|";
+			}
+			if (ll1 % 2 == 0)
+			{
+
+				cout << "  " << s;
+				s++;
+				cout << "    " << s;
+				s++;
+				cout << "\t\t";
+				cout << " " << s;
+				s++;
+				if (s == 4 || s == 8)
+				{
+					cout << "     " << s << " ";
+					s++;
+				}
+				else
+				{
+					cout << "    " << s;
+					s++;
+				}
+			}
+			else
+			{
+				for (int space = 1; space < 33; space++)
+				{
+					cout << " ";
+				}
+			}
+			cout << "|" << endl;
+		}
+		cout << "\t";
+		for (int wl2 = 0; wl2 < 34; wl2++)
+		{
+			cout << "-";
+		}
+		cout << endl << endl;
+		int sn1, snl;
+		int sen;
+		cout << "\t\t\tSELECT YOUR SEAT";
+		for (snl = 0; snl<100; snl++)//snl stands for serial number loop
+		{
+			cout << endl << endl << "Enter seat number : ";
+			cin >> sen;//sen for seat number
+			if (sen>0 && sen < 69)
+			{
+				sn1 = sen;//required seat number
+				break;
+			}
+			else
+			{
+				cout << "incorrect seat number : ";
+			}
+		}
+		int cards, cardl, cardn;//cardl for card select loop and cards for card serial
+		cout << "\t\t\tPAYMENT METHOD" << endl << endl;
+		cout << "\t1: Debit card\t2: credit card\t3:Visa card\t4: Master card";
+		for (cardl = 0; cardl<100; cardl++)
+		{
+			cout << endl << endl << "which card do you want to use(enter serial number) : ";
+			cin >> cards;
+			if (cards>0 && cards < 5)
+			{
+				break;
+			}
+			else
+			{
+				cout << endl << "You entered in correct command..try again";
+			}
+		}
+		for (int icn = 0; icn<100; icn++)//icn for invalid card number
+		{
+			cout << endl << "enter your card number(greater than 30000) : ";
+			cin >> cardn;//cardn for card number
+			if (cardn>30000)
+			{
+				break;
+			}
+			else
+			{
+				cout << endl << "invalid card number..try again" << endl;
+			}
+		}
+		char sisl[] = "islamabad";
+		char sdub[] = "sharja    "; char slon[] = "london   "; char sdoh[] = "doha     ";
+		char stok[] = "tokyo    "; char sist[] = "istanbul ";
+
+		if (strcmp(dep, isl) == 0)
+			strcpy_s(dep, sisl);
+		if (strcmp(dep, dub) == 0)
+			strcpy_s(dep, sdub);
+		if (strcmp(dep, tok) == 0)
+			strcpy_s(dep, stok);
+		if (strcmp(dep, lon) == 0)
+			strcpy_s(dep, slon);
+		if (strcmp(dep, ist) == 0)
+			strcpy_s(dep, sist);
+		if (strcmp(dep, doh) == 0)
+			strcpy_s(dep, sdoh);
+		if (strcmp(ari, isl) == 0)
+			strcpy_s(ari, sisl);
+		if (strcmp(ari, dub) == 0)
+			strcpy_s(ari, sdub);
+		if (strcmp(ari, tok) == 0)
+			strcpy_s(ari, stok);
+		if (strcmp(ari, lon) == 0)
+			strcpy_s(ari, slon);
+		if (strcmp(ari, ist) == 0)
+			strcpy_s(ari, sist);
+		if (strcmp(ari, doh) == 0)
+			strcpy_s(ari, sdoh);
+		cout << endl << endl << "\t\t\tTICKET" << endl << endl;
+		for (int wl1 = 0; wl1 < 73; wl1++)//wl1=width loop 1
+		{
+			cout << "-";
+		}
+		cout << endl;
+
+		for (int ll2 = 1; ll2 <= 20; ll2++)
+		{
+			for (int tl = 1; tl <= 1; tl++)//tl for the total length element
+			{
+				cout << "|";
+			}
+
+
+
+			if (ll2 == 2)
+			{
+				cout << "\t\t\t" << sf << "\t\t\t";
+			}
+			else
+			{
+				if (ll2 == 7)
+				{
+					cout << "  Name: \t " << PassengerData.Name << "\t\n";
+					cout << "   Passport ID:\t  " << PassengerData.Passport << endl;
+					cout << "  Mobile No.: \t" << PassengerData.MobileNo << "\t\n";
+					cout << "   Email: \t " << PassengerData.Email << endl;
+					cout << "  \n  Departure city: " << dep << "\t\t";
+					cout << " Arrival city: " << ari;
+
+				}
+				else
+				{
+					if (ll2 == 9)
+					{
+						cout << " Departure date: " << Date.day << "-" << Date.month << "-" << Date.year << "\t\t";
+						cout << " Reached Date: " << Date.day + 2 << "-" << Date.month << "-" << Date.year << " ";
+					}
+					else
+					{
+						if (ll2 == 12)
+						{
+
+							if (sn == 1)
+							{
+								cout << "\t\t\tLeaving time : 12:05pm\t\t\t";
+							}
+							if (sn == 2)
+							{
+								cout << "\t\t\tLeaving time : 01:35pm\t\t\t";
+							}
+							if (sn == 3)
+							{
+								cout << "\t\t\tLeaving time : 04:05pm\t\t\t";
+							}
+							if (sn == 4)
+							{
+								cout << "\t\t\tLeaving time : 06:35pm\t\t\t";
+							}
+							if (sn == 5)
+							{
+								cout << "\t\t\tLeaving time : 09:05pm\t\t\t";
+							}
+						}
+						else
+						{
+							if (ll2 == 15)
+							{
+								cout << "\t\t\tYour seat number is : " << sn1;
+								if (sn1 > 0 && sn1 < 10)
+									cout << "\t\t\t";
+								else
+								{
+									cout << "\t\t";
+								}
+							}
+							else
+							{
+								if (ll2 == 19)
+								{
+									cout << "\tThank you for your interest in our company\t\t";
+								}
+								else
+								{
+									if (ll2 == 20)
+									{
+										cout << "\t    hope you'll enjoy the flight\t\t\t";
+									}
+									else
+									{
+										for (int tspace = 1; tspace < 64; tspace++)//tspace= table space
+										{
+											cout << " ";
+										}
+									}
+
+								}
+							}
+						}
+					}
+
+				}
+
+			}
+
+			cout << "\t!" << endl;
+		}
+		for (int wl2 = 0; wl2 < 73; wl2++)
+		{
+			cout << "-";
+		}
+
+		_getch();
+	}
+}#include <iostream>
+#include <conio.h>
+#include <string>
+#include <cstring>
+#include <fstream>
+using namespace std;
+
+struct Date
+{
+	int day;
+	int month;
+	int year;
+}Date;
+struct Info
+{
+	char Name[20];
+	int Passport;
+	char Email[20];
+	int MobileNo;
+	
+}PassengerData ;
+void detail()
+{
+
+}
+
+void main()
+{
+	char dep[10], ari[10];
+	int result;
+	cout << "\t\t\tAIRLINE TICKET RESSERVATION SYSTEM" << endl << endl << endl << endl;
+	cout << "Service is only available for these cities" << endl << endl;
+	cout << "1:   Islamabad (Pakistan)" << endl; char isl[] = "islamabad";
+	cout << "2:   Sharja (UAE)" << endl; char dub[] = "sharja";
+	cout << "3:   London (UK)" << endl; char lon[] = "london";
+	cout << "4:   Istanbul (Turkey)" << endl; char ist[] = "istanbul";
+	cout << "5:   Tokyo (Japan)" << endl; char tok[] = "tokyo";
+	cout << "6:   Doha (Qatar)" << endl << endl; char doh[] = "doha";
+	cout << endl << "\t\t\tSEARCH FLIGHTS" << endl << endl << endl;
+
+	cout << "(Only Lower Case for city name)" << endl;
+	for (int tc = 0; tc < 100; tc++)//tc for total city loop
+	{
+		for (int dc = 0; dc < 100; dc++)//dc for departure city loop
+		{
+			cout << "->   Going from : ";
+			cin >> dep;
+			if (strcmp(dep, isl) == 0)
+			{
+				break;
+			}
+			else
+			{
+				if (strcmp(dep, dub) == 0)
+				{
+					break;
+				}
+				else
+				{
+					if (strcmp(dep, lon) == 0)
+					{
+						break;
+					}
+					else
+					{
+						if (strcmp(dep, ist) == 0)
+						{
+							break;
+						}
+						else
+						{
+							if (strcmp(dep, tok) == 0)
+							{
+								break;
+							}
+							else
+							{
+								if (strcmp(dep, doh) == 0)
+								{
+									break;
+								}
+								else
+								{
+									cout << "we don't have any service for this city. try again!" << endl << endl;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		for (int ac = 0; ac < 100; ac++)//ac for arrival city loop
+		{
+			cout << endl << "->   Going to : ";
+			cin >> ari;
+			if (strcmp(ari, isl) == 0)
+			{
+				break;
+			}
+			else
+			{
+				if (strcmp(ari, dub) == 0)
+				{
+					break;
+				}
+				else
+				{
+					if (strcmp(ari, lon) == 0)
+					{
+						break;
+					}
+					else
+					{
+						if (strcmp(ari, ist) == 0)
+						{
+							break;
+						}
+						else
+						{
+							if (strcmp(ari, tok) == 0)
+							{
+								break;
+							}
+							else
+							{
+								if (strcmp(ari, doh) == 0)
+								{
+									break;
+								}
+								else
+								{
+									cout << "we don't have any service for this city. try again!" << endl << endl;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		result = strcmp(dep, ari);
+		if (result == 0)
+		{
+			cout << "incorrect entries or same cities....try again !" << endl << endl;
+		}
+		else
+		{
+			break;
+		}
+	}
+	int d, m, y;
+	int date, tdate;
+	for (tdate = 0; tdate < 100; tdate++)
+	{
+		for (date = 0; date<100; date++)
+		{
+			cout << endl << endl;
+			cout << "-> Going date" << endl;
+			cout << "\tDay : ";
+			cin >> Date.day;
+			cout << "\tMonth : ";
+			cin >> Date.month;
+			cout << "\tYear : ";
+			cin >> Date.year;
+			if (Date.day>0 && Date.day <= 31)
+			{
+				if (Date.month > 0 && Date.month <= 12)
+				{
+					if (Date.year >= 2018 && Date.year <= 2019)//date only varies btween 2018 & 2019
+					{
+						break;
+					}
+					else
+					{
+						cout << "Invalid Year !!" << endl;
+					}
+				}
+				else
+				{
+					cout << "Invalid Month !!" << endl;
+				}
+			}
+			else
+			{
+				cout << "Invalid Date !!" << endl;
+			}
+		}
+
+		cout << endl << endl;
+
+		char f1[] = "PIA - C345a           ", f2[] = "EMIRATES - C759d      ", f3[] = "AIR BLUE - F095b      ", f4[] = "QATAR AIR WAYS - E296a", f5[] = "JAPAN AIRLINES - A125d";
+		cout << endl << endl << "\t\t\tSEARCH RESULTS" << endl << endl << endl;
+		cout << "\tFlight no.\t\t\tLeaving from\t\t\tLeaving at" << endl << endl;
+		cout << "1: " << f1 << "\t\t\t" << dep << "\t\t\t12:05pm" << endl << endl;
+		cout << "2: " << f2 << "\t\t\t" << dep << "\t\t\t01:35pm" << endl << endl;
+		cout << "3: " << f3 << "\t\t\t" << dep << "\t\t\t04:05pm" << endl << endl;
+		cout << "4: " << f4 << "\t\t\t" << dep << "\t\t\t06:35pm" << endl << endl;
+		cout << "5: " << f5 << "\t\t\t" << dep << "\t\t\t09:05pm" << endl << endl;
+		cout << "\t\t\tSELECT YOUR FLIGHT" << endl << endl << endl;
+		int sn;
+		char sf[50];
+
+		for (int wsn = 0; wsn < 100; wsn++)//wsn stands for wrong serial number loop
+		{
+			cout << "\t  enter flight serial number : ";
+			cin >> sn;
+			if (sn >= 1 && sn <= 5)
+			{
+				if (sn == 1)
+				{
+					strcpy_s(sf, f1);
+					break;
+				}
+				if (sn == 2)
+				{
+					strcpy_s(sf, f2);
+					break;
+				}
+				if (sn == 3)
+				{
+					strcpy_s(sf, f3);
+					break;
+				}
+				if (sn == 4)
+				{
+					strcpy_s(sf, f4);
+					break;
+				}
+				if (sn == 5)
+				{
+					strcpy_s(sf, f5);
+					break;
+				}
+			}
+			else
+			{
+				cout << endl << "\tincorrect serial number. try again" << endl << endl;
+			}
+		}
+		char name[100], passportnum[16], email[30], number[20], sr[20];
+		cout << "";
+		cin.getline(sr, 15);
+		cout << "Enter name : ";
+		cin>>PassengerData.Name;
+		cout << "Enter passport number : ";
+		cin>>PassengerData.Passport;
+		cout << "Enter email : ";
+		cin >> PassengerData.Email;
+		cout << "Enter Phone Number : ";
+		cin >> PassengerData.MobileNo;
+		ofstream file("airline.csv");
+		{
+			cout << "Name" << "," << "Passport" << "," << "Number" << "," << "Email";
+			file << name << "," << passportnum << "," << number << "," << email << "\n";
+		}
+		file.close();
+		cout << endl << "  Your selected flight is :: " << sf;//select flight copied from hard code array s
+		cout << endl << endl;
+		cout << "\t\t\tFLIGHT DETAILS" << endl << endl << endl;
+		cout << "\t\tflight name:\t " << sf << endl << endl;
+		cout << "\t\tleaving from:\t " << dep << endl << endl;
+		cout << "\t\tgoing to:\t " << ari << endl << endl;
+		cout << "\tsitting plan: " << endl << endl;
+		int s = 1;
+		cout << "\t";
+		for (int wl1 = 0; wl1 < 34; wl1++)//wl1=width loop 1
+		{
+			cout << "-";
+		}
+		cout << endl;
+		for (int ll1 = 1; ll1 <= 35; ll1++)
+		{
+			cout << "\t";
+			for (int c = 1; c <= 1; c++)//c for the one length element
+			{
+				cout << "|";
+			}
+			if (ll1 % 2 == 0)
+			{
+
+				cout << "  " << s;
+				s++;
+				cout << "    " << s;
+				s++;
+				cout << "\t\t";
+				cout << " " << s;
+				s++;
+				if (s == 4 || s == 8)
+				{
+					cout << "     " << s << " ";
+					s++;
+				}
+				else
+				{
+					cout << "    " << s;
+					s++;
+				}
+			}
+			else
+			{
+				for (int space = 1; space < 33; space++)
+				{
+					cout << " ";
+				}
+			}
+			cout << "|" << endl;
+		}
+		cout << "\t";
+		for (int wl2 = 0; wl2 < 34; wl2++)
+		{
+			cout << "-";
+		}
+		cout << endl << endl;
+		int sn1, snl;
+		int sen;
+		cout << "\t\t\tSELECT YOUR SEAT";
+		for (snl = 0; snl<100; snl++)//snl stands for serial number loop
+		{
+			cout << endl << endl << "Enter seat number : ";
+			cin >> sen;//sen for seat number
+			if (sen>0 && sen < 69)
+			{
+				sn1 = sen;//required seat number
+				break;
+			}
+			else
+			{
+				cout << "incorrect seat number : ";
+			}
+		}
+		int cards, cardl, cardn;//cardl for card select loop and cards for card serial
+		cout << "\t\t\tPAYMENT METHOD" << endl << endl;
+		cout << "\t1: Debit card\t2: credit card\t3:Visa card\t4: Master card";
+		for (cardl = 0; cardl<100; cardl++)
+		{
+			cout << endl << endl << "which card do you want to use(enter serial number) : ";
+			cin >> cards;
+			if (cards>0 && cards < 5)
+			{
+				break;
+			}
+			else
+			{
+				cout << endl << "You entered in correct command..try again";
+			}
+		}
+		for (int icn = 0; icn<100; icn++)//icn for invalid card number
+		{
+			cout << endl << "enter your card number(greater than 30000) : ";
+			cin >> cardn;//cardn for card number
+			if (cardn>30000)
+			{
+				break;
+			}
+			else
+			{
+				cout << endl << "invalid card number..try again" << endl;
+			}
+		}
+		char sisl[] = "islamabad";
+		char sdub[] = "sharja    "; char slon[] = "london   "; char sdoh[] = "doha     ";
+		char stok[] = "tokyo    "; char sist[] = "istanbul ";
+
+		if (strcmp(dep, isl) == 0)
+			strcpy_s(dep, sisl);
+		if (strcmp(dep, dub) == 0)
+			strcpy_s(dep, sdub);
+		if (strcmp(dep, tok) == 0)
+			strcpy_s(dep, stok);
+		if (strcmp(dep, lon) == 0)
+			strcpy_s(dep, slon);
+		if (strcmp(dep, ist) == 0)
+			strcpy_s(dep, sist);
+		if (strcmp(dep, doh) == 0)
+			strcpy_s(dep, sdoh);
+		if (strcmp(ari, isl) == 0)
+			strcpy_s(ari, sisl);
+		if (strcmp(ari, dub) == 0)
+			strcpy_s(ari, sdub);
+		if (strcmp(ari, tok) == 0)
+			strcpy_s(ari, stok);
+		if (strcmp(ari, lon) == 0)
+			strcpy_s(ari, slon);
+		if (strcmp(ari, ist) == 0)
+			strcpy_s(ari, sist);
+		if (strcmp(ari, doh) == 0)
+			strcpy_s(ari, sdoh);
+		cout << endl << endl << "\t\t\tTICKET" << endl << endl;
+		for (int wl1 = 0; wl1 < 73; wl1++)//wl1=width loop 1
+		{
+			cout << "-";
+		}
+		cout << endl;
+
+		for (int ll2 = 1; ll2 <= 20; ll2++)
+		{
+			for (int tl = 1; tl <= 1; tl++)//tl for the total length element
+			{
+				cout << "|";
+			}
+
+
+
+			if (ll2 == 2)
+			{
+				cout << "\t\t\t" << sf << "\t\t\t";
+			}
+			else
+			{
+				if (ll2 == 7)
+				{
+					cout << "  Name: \t " << PassengerData.Name << "\t\n";
+					cout << "   Passport ID:\t  " << PassengerData.Passport << endl;
+					cout << "  Mobile No.: \t" << PassengerData.MobileNo << "\t\n";
+					cout << "   Email: \t " << PassengerData.Email << endl;
+					cout << "  \n  Departure city: " << dep << "\t\t";
+					cout << " Arrival city: " << ari;
+
+				}
+				else
+				{
+					if (ll2 == 9)
+					{
+						cout << " Departure date: " << Date.day << "-" << Date.month << "-" << Date.year << "\t\t";
+						cout << " Reached Date: " << Date.day + 2 << "-" << Date.month << "-" << Date.year << " ";
+					}
+					else
+					{
+						if (ll2 == 12)
+						{
+
+							if (sn == 1)
+							{
+								cout << "\t\t\tLeaving time : 12:05pm\t\t\t";
+							}
+							if (sn == 2)
+							{
+								cout << "\t\t\tLeaving time : 01:35pm\t\t\t";
+							}
+							if (sn == 3)
+							{
+								cout << "\t\t\tLeaving time : 04:05pm\t\t\t";
+							}
+							if (sn == 4)
+							{
+								cout << "\t\t\tLeaving time : 06:35pm\t\t\t";
+							}
+							if (sn == 5)
+							{
+								cout << "\t\t\tLeaving time : 09:05pm\t\t\t";
+							}
+						}
+						else
+						{
+							if (ll2 == 15)
+							{
+								cout << "\t\t\tYour seat number is : " << sn1;
+								if (sn1 > 0 && sn1 < 10)
+									cout << "\t\t\t";
+								else
+								{
+									cout << "\t\t";
+								}
+							}
+							else
+							{
+								if (ll2 == 19)
+								{
+									cout << "\tThank you for your interest in our company\t\t";
+								}
+								else
+								{
+									if (ll2 == 20)
+									{
+										cout << "\t    hope you'll enjoy the flight\t\t\t";
+									}
+									else
+									{
+										for (int tspace = 1; tspace < 64; tspace++)//tspace= table space
+										{
+											cout << " ";
+										}
+									}
+
+								}
+							}
+						}
+					}
+
+				}
+
+			}
+
+			cout << "\t!" << endl;
+		}
+		for (int wl2 = 0; wl2 < 73; wl2++)
+		{
+			cout << "-";
+		}
+
+		_getch();
+	}
+}
